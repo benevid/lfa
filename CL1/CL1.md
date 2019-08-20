@@ -14,11 +14,11 @@
 
 #### Entrega
 
-- Mandar email para: benevid@unemat.br
+- Enviar pelo Moodle - Atividade CL1
 
 - Colocar no assunto do email: LFA2019-2
 
-- Corpo do Email: Descrever como resolveu o exercício e o que foi alterado. 
+- Arquivo TXT: Descrever como resolveu o exercício e o que foi alterado. Colocar nomes dos participantes do grupo
 
 - Anexar o código fonte.
 
