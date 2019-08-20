@@ -22,8 +22,6 @@
 
 - Anexar o código fonte.
 
-
-
 ## Gramáticas
 
 Muitas *linguagens formais*, como as linguagens de programação (C, Python, Java, etc.), podem ser descritas através de *gramáticas*, um conjunto de regras recursivas. Com estas notas você vai:
