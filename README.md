@@ -8,12 +8,8 @@ Disciplina de Linguagens Formais 2019-2
 
 ### Aula prática na pasta CL1. 
 
-Enviar pelo Moodle os resultados.
+Enviar pelo email os resultados.
 
 ### Aula prática CL2
 
-A descrição das atividades se encontram na pasta CL2 (Aqui mesmo no Git).
-
-O prazo de entrega é até 15/09.
-
-Boa Atividades a todos.
+em breve....

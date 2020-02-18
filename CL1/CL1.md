@@ -4,23 +4,18 @@
 
 #### Datas Importantes
 
-- 24/08 - 5 pontos
+- 28/02 - Data final
 
-- 25/08 - 4 pontos
-
-- 26/03 - 3 pontos
-
-- 27/03 - 2 pontos
 
 #### Entrega
 
-- Enviar pelo Moodle - Atividade CL1
+- Mandar email **PARA**: benevid@unemat.br
 
-- Colocar no assunto do email: LFA2019-2
+- Colocar no **ASSUNTO** do email: NOME1, NOME2 - LFA2020-1
 
-- Arquivo TXT: Descrever como resolveu o exercício e o que foi alterado. Colocar nomes dos participantes do grupo
+- Colocar no **CORPO** do Email: Descrever como resolveu o exercício e o que foi alterado.
 
-- Anexar o código fonte.
+- **ANEXAR** o Código Fonte.
 
 ## Gramáticas
 
@@ -75,7 +70,7 @@ Você pode encontrar [aqui](http://www.cs.man.ac.uk/~pjj/bnf/c_syntax.bnf) a gra
 
 Com base na gramática acima para seqüências balanceadas de parênteses podemos escrever um programa que testa se uma seqüência de parênteses é balanceada ou não. Um tal programa, que testa se uma string pertence à linguagem definida por uma gramática, é chamado de *parser*.
 
-Existem vários tipos de parsers. O parser que vamos escrever para seqüências balanceadas é um *recursive-descent parser*. Ele consiste de um conjunto de funções mutuamente recursivas, cada uma implementando as produções que começam com um determinado não-terminal. Em nosso caso, temos apenas um não-terminal, `B`. Assim, temos apenas uma função, que chamamos de `B_prod`.
+Existem vários tipos de parsers. O parser que vamos escrever para seqüências balanceadas é um *recursive-descent parser*. Ele consiste de um conjunto de funções mutuamente recursivas, cada uma implementando as produções que começam com um determinado não-terminal. Em nosso caso, temos apenas um <u>não-terminal</u>, `B`. Assim, temos apenas uma função, que chamamos de `B_prod`.
 
 Suponha que queiramos determinar se uma dada seqüência é ou não balanceada. Vamos percorrê-la da esquerda para a direita, guardando numa variável global `cur_char` um ponteiro para o caractere a ser considerado no momento:
 
@@ -179,52 +174,4 @@ A primeira produção acima apresenta o fenômeno de *recursão à esquerda*. Se
 ### Exercícios
 
 1. Usando o exemplo anterior, crie um programa para aplicar as regras de produção para uma gramática que descreve a linguagem composta de todas as strings da forma `A...AB...B`, compostas de um certo número de letras `A` seguidas do mesmo número de letras `B`, por exemplo `AB`, `AABB`, `AAAABBBB`, etc. Note que a palavra vazia também pertence à linguagem.
-
-```c
-#include<stdio.h>
-
-static char *cur_char;
-static int b;
-
-int B_prod()
-{
-  if (*cur_char == 'A' && b==0) {
-    cur_char++;
-    //B_prod == 1 (!0==1)
-    if (!B_prod()) return 0;
-
-    if (*cur_char != 'B')
-      return 0;
-    b=1;
-    cur_char++;
-
-    return B_prod();
-  }
-  
-  return 1;
-}
-
-int main()
-{
-  char buffer[256];
-
-  while (scanf("%255s", buffer)) {
-    cur_char = buffer;
-    b=0;
-    if (!B_prod() || *cur_char) {
-      printf("Palavra inválida:\n");
-      printf("    %s\n", buffer);
-
-      for (int i = 0; i < cur_char - buffer; i++)
-        putchar(' ');
-
-      printf("    ^\n");
-    }
-    else
-      printf("Palavra válida\n");
-  }
-
-  return 0;
-}
-```
 
